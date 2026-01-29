@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 01 Landing Page</title>
+
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+          body {
+            background: #0f172a;
+            color: white;
+            min-height: 200vh;
+        }
+  
+          header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.4s ease;
+            z-index: 1000;
+        }
+
+          header.active {
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+    nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #cbd5f5;
+            font-size: 15px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: -6px;
+            background: #38bdf8;
+            transition: 0.3s;
+        }
+
+          nav a:hover {
+            color: #38bdf8;
+         }
+
+    nav a:hover::after {
+            width: 100%;
+        }
+
+            .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
+            }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+          }
+
+           .hero p {
+            max-width: 600px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #e5e7eb;
+        }
+
+          section {
+            padding: 100px 60px;
+        }
+
+         section h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+         section p {
+            max-width: 750px;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+          @media (max-width: 768px) {
+            header {
+                padding: 18px 25px;
+            }
+
+            nav a {
+                margin-left: 18px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+       <header id="header">
+        <div class="brand">PRODIGY</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Work</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+      <div class="hero">
+        <div>
+            <h1>Responsive Landing Page</h1>
+            <p>
+                A modern landing page with an interactive navigation bar that reacts on
+                scroll and hover using HTML, CSS, and JavaScript.
+            </p>
+        </div>
+       </div>
+
+    <section>
+        <h2></h2>
+        <p>
+            The navigation bar dynamically updates its style when the page is
+            scrolled, creating a smooth and engaging user experience across all
+            devices.
+        </p>
+      </section>
+
+      <script>
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+            header.classList.toggle("active", window.scrollY > 60);
+        });
+      </script>
+
+</body>
+
+</html>
